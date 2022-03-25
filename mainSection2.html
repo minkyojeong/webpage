@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        div#m2_mainsection2{
+            width:80%;
+            margin:0 auto;
+        }
+        div.m2_slides p:first-child{
+            font-size: 42px;
+        }
+        div#m2_mainsection2 a.m2_house_link{
+            text-decoration: none;
+        }
+        div#m2_mainsection2 a.m2_house_link:active p{
+            color:blue;
+        }
+        div.m2_house_list {
+            display: flex;
+            justify-content: center;
+            height:300px;
+        }
+        div.m2_house_content{
+            text-align: center;
+            margin:0 20px;
+            width:300px;
+        }
+        div.m2_house_content p:first-of-type{
+            color:black;
+        }
+        div.m2_house_content img{
+            width:216px;
+            height:216px;
+        }
+        div.m2_slide_button_list{
+            text-align: center;
+            margin:20px 0;
+        }
+        a.m2_slide_button {
+            margin:10px;
+        }
+        a.m2_slide_button:hover {
+            color:red;
+        }
+
+        /* input.m2_slide_button{
+            color:black;
+            background: white;
+            border-radius: 15px;
+            font-size: 20px;
+            padding:10px;
+            margin:0 50px;
+        }
+        input.m2_slide_button:hover{
+            color:white;
+            background: black;
+        } */
+
+        input[type=radio]{
+            display:none;
+        }
+        div.m2_buttons {
+            width:900px;
+            margin:20px auto;
+        }
+        div.m2_buttons div.m2_buttons_label {
+            overflow: hidden;
+            text-align: center;
+            width:900px;
+        }
+        div.m2_buttons label.m2_event_btn {
+            display:block;
+            border:1px solid black;
+            width:450px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 20px;
+            float:left;
+            box-sizing: border-box;
+        }
+        input[type=radio]:nth-of-type(1):checked ~ .m2_buttons label:nth-of-type(1),
+        input[type=radio]:nth-of-type(2):checked ~ .m2_buttons label:nth-of-type(2){
+            background: black;
+            color:white;
+        }
+        div.m2_event_list{
+            width:80%;
+            height:400px;
+            margin:0 auto;
+            text-align: center;
+        }
+        div.m2_event_list p:first-of-type{
+            color:black;
+        }
+        div.m2_event_past_content{
+            width:20%;
+            height:400px;
+            text-align: center;
+            display: none;
+            float:left;
+            margin:0 10px;
+        }
+        div.m2_event_ing_content{
+            width:20%;
+            height:400px;
+            text-align: center;
+            float:left;
+            margin:0 10px;
+        }
+        div.m2_event_past_content img{
+            width:216px;
+            height:216px;
+        }
+        div.m2_event_ing_content img{
+            width:216px;
+            height:216px;
+        }
+        div.m2_event_list a.m2_event_content_link{
+            text-decoration: none;
+        }
+        div.m2_event_list a.m2_event_content_link:active p{
+            color:blue;
+        }
+    </style>
+    <script>
+        // 화면이 다 출력 후 보여질 슬라이드
+        window.onload=function(){
+            showSlides(1);
+        }
+        // 초기값
+        var slideIndex = 1;
+        // 다음 버튼을 누르면 슬라이드 인덱스 값 +1 하고 showSlides 함수 호출
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+        function showSlides(n) {
+            var i;
+            // 구성한 화면들 슬라이스 배열에 넣기
+            var slides = document.getElementsByClassName("m2_slides");
+            // 최대치에서 또 +1되면 처음 화면으로
+            if (n > slides.length) {slideIndex = 1}
+            // 처음 화면에서 이전 누르면 최대값으로
+            if (n < 1) {slideIndex = slides.length}
+            // 배열에 담긴 화면 전체 none
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+        // 첫화면(0번째 인덱스) block
+        slides[slideIndex-1].style.display = "block"; 
+        }
+
+        function checkEventPast(){
+            // 구성한 div 배열에 넣기
+            var divPast = document.getElementsByClassName("m2_event_past_content");
+            var divIng = document.getElementsByClassName("m2_event_ing_content");
+            // 현재 이벤트 페이지 보이기
+            for (i = 0; i < divPast.length; i++) {
+                divPast[i].style.display = "block";
+            }
+
+            //지난 이벤트 안보이기
+            for (i = 0; i < divIng.length; i++) {
+                divIng[i].style.display = "none";
+            }
+        }
+        function checkEventIng(){
+            var divPast = document.getElementsByClassName("m2_event_past_content");
+            var divIng = document.getElementsByClassName("m2_event_ing_content");
+            for (i = 0; i < divPast.length; i++) {
+                divPast[i].style.display = "none";
+            }
+            for (i = 0; i < divIng.length; i++) {
+                divIng[i].style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="m2_mainsection2">
+        <div class="m2_slides">
+            <p>인기 숙소 1/3<p><br>
+            <div class="m2_house_list">
+                <div class="m2_house_content">
+                    <a href="#" class="m2_house_link">
+                    <img src="/images/best_house1.jpg" alt="house_img1">
+                    <p class="m2_house_title">2 Bed rooms 빔프로젝터 Netflix /큰 거실/넓고 쾌적한 숙소</p>
+                    <p style="color:grey"><small>최대 인원 2명 침실 1개 침대 1개 욕실 1.5개</small></p>
+                    </a>
+                </div>
+                <div class="m2_house_content">
+                    <a href="#" class="m2_house_link">
+                    <img src="/images/best_house2.jpg" alt="house_img1">
+                    <p class="m2_house_title">[힙지로 10분] #집전체이용 #퀸사이즈침대 ★ Premium room</p>
+                    <p style="color:grey"><small>최대 인원 2명 침실 1개 침대 1개 욕실 1개</small></p>
+                    </a>
+                </div>
+                <div class="m2_house_content">
+                    <a href="#" class="m2_house_link">
+                    <img src="/images/best_house3.jpg" alt="house_img1">
+                    <p class="m2_house_title">🔴저세상씨티뷰🔴늦은퇴실,넷플릭스,동묘앞역도보1분,입실8:00PM퇴실4:00PM(자가격리X)</p>
+                    <p style="color:grey"><small>최대 인원 3명 침실 1개 침대 1개 욕실 1개</small></p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="m2_slides">
+            <p>인기 숙소 2/3</p><br>
+            <div class="m2_house_list">
+                <div class="m2_house_content">
+                    <a href="#" class="m2_house_link">
+                    <img src="/images/best_house4.jpg" alt="house_img1">
+                    <p class="m2_house_title">#홍대입구 5분 #빔프로젝트 #카페감성 #보드게임</p>
+                    <p style="color:grey"><small>최대 인원 4명 침실 1개 침대 1개 욕실 1개</small></p>
+                    </a>
+                </div>
+                <div class="m2_house_content">
+                    <a href="#" class="m2_house_link">
+                    <img src="/images/best_house5.jpg" alt="house_img1">
+                    <p class="m2_house_title">Seoul Sunday House (동대문/동묘역 가족 친구여행 2인기준,요리/주차 불가)</p>
+                    <p style="color:grey"><small>최대 인원 2명 침실 1개 침대 1개 욕실 1개</small></p>
+                    </a>
+                </div>
+                <div class="m2_house_content">
+                    <a href="#" class="m2_house_link">
+                    <img src="/images/best_house6.jpg" alt="house_img1">
+                    <p class="m2_house_title">[건대역,커먼그라운드 근접] 넓고 깨끗한 숙소</p>
+                    <p style="color:grey"><small>최대 인원 2명 침실 1개 침대 1개 욕실 1개</small></p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="m2_slides">
+             <p>인기 숙소 3/3</p><br>
+            <div class="m2_house_list">
+                <div class="m2_house_content">
+                    <a href="#" class="m2_house_link">
+                    <img src="/images/best_house7.jpg" alt="house_img1">
+                    <p class="m2_house_title">빈티하우스2 #홍대입구 # 빔프로젝터 #연트럴파크, 경의선책거리공원</p>
+                    <p style="color:grey"><small>최대 인원 2명 침실 1개 침대 1개 욕실 1개</small></p>
+                    </a>
+                </div>
+                <div class="m2_house_content">
+                    <a href="#" class="m2_house_link">
+                    <img src="/images/best_house8.jpg" alt="house_img1">
+                    <p class="m2_house_title">Amor_#02 (망원동/복층/빔프로잭트)</p>
+                    <p style="color:grey"><small>최대 인원 3명 침실 1개 침대 1개 욕실 1개</small></p>
+                    </a>
+                </div>
+                <div class="m2_house_content">
+                    <a href="#" class="m2_house_link">
+                    <img src="/images/best_house9.jpg" alt="house_img1">
+                    <p class="m2_house_title">[New open]구로구(guro-gu) #고척돔#모션베드#빔프로젝터#캡슐커피 wifi</p>
+                    <p style="color:grey"><small>최대 인원 2명 침실 1개 침대 1개 욕실 1개</small></p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="m2_slide_button_list">
+            <!-- <input type="button" class="m2_slide_button" value="이전" onclick="plusSlides(-1)"> 
+            <input type="button" class="m2_slide_button" value="다음" onclick="plusSlides(1)"> -->
+            <a class="prev m2_slide_button" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next m2_slide_button" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        
+    </div>
+    <hr>
+    <input type="radio" name="m2_event_button" id="m2_event_past" onclick="checkEventPast();">
+    <input type="radio" name="m2_event_button" id="m2_event_ing" onclick="checkEventIng();" checked>
+    <div class="m2_buttons">
+        <div class="m2_buttons_label">
+            <label for="m2_event_past" class="m2_event_btn">지난 이벤트</label>
+            <label for="m2_event_ing" class="m2_event_btn">진행 중인 이벤트</label>
+        </div>
+    </div>
+    <div class="m2_event_list">
+        <div class="m2_event_past_content">
+            <a href="#" class="m2_event_content_link">
+            <img src="/images/event1.jpg" alt="house_img1">
+            <p>[뜨거운 피] CGV 필름마크</p>
+            <p style="color:grey"><small>2021.03.16~2021.04.10</small></p>
+            </a>
+        </div>
+        <div class="m2_event_past_content">
+            <a href="#" class="m2_event_content_link">
+            <img src="/images/event2.jpg" alt="house_img1">
+            <p>ZEPETO X CGV 햇반 라이스크림 이벤트</p>
+            <p style="color:grey"><small>2021.03.11~2021.03.25</small></p>
+            </a>
+        </div>
+        <div class="m2_event_past_content">
+            <a href="#" class="m2_event_content_link">
+            <img src="/images/event3.jpg" alt="house_img1">
+            <p>[문폴] IMAX 한정판 포스터 증정</p>
+            <p style="color:grey"><small>2021.03.11~2021.03.22</small></p>
+            </a>
+        </div>
+        <div class="m2_event_past_content">
+            <a href="#" class="m2_event_content_link">
+            <img src="/images/event4.jpg" alt="house_img1">
+            <p>[더 배트맨] SCREENX 3면 필름</p>
+            <p style="color:grey"><small>2021.03.11~2022.04.03</small></p>
+            </a>
+        </div>
+        <div class="m2_event_ing_content">
+            <a href="#" class="m2_event_content_link">
+            <img src="/images/event5.jpg" alt="house_img1">
+            <p>[더 배트맨] SCREENX 스페셜 코믹북</p>
+            <p style="color:grey"><small>2022.03.04~2022.03.31</small></p>
+            </a>
+        </div>
+        <div class="m2_event_ing_content">
+            <a href="#" class="m2_event_content_link">
+            <img src="/images/event6.jpg" alt="house_img1">
+            <p>[더 배트맨] SCREENX 리미티드 포스터</p>
+            <p style="color:grey"><small>2022.02.22~2022.03.31</small></p>
+            </a>
+        </div>
+        <div class="m2_event_ing_content">
+            <a href="#" class="m2_event_content_link">
+            <img src="/images/event7.jpg" alt="house_img1">
+            <p>[더 배트맨] 4DX 리미티드 포스터</p>
+            <p style="color:grey"><small>2022.02.22~2022.03.31</small></p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

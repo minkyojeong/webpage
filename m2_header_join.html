@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <title>Document</title>
+    <style>
+        div.m2_join_modal {
+            width:568px;
+            height:682px;
+            border-radius: 10px;
+            background: white;
+        }
+        div.m2_join_modal_header {
+            display:flex;
+            height:64px;
+            padding: 0 24px;
+            justify-content: space-between;
+            border-bottom: 1px solid gray;;
+        }
+        button.m2_join_modal_close{
+            background: white;
+            border:none;
+            line-height: 64px;
+            box-sizing: border-box;
+            padding: 0px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        div.m2_join_modal_body{
+            padding: 20px;
+        }
+        div.m2_join_modal_title{
+            background: white;
+            border:none;
+            line-height: 64px;
+            width:100%;
+            text-align: center;
+            font-weight:bold;
+        }
+        div.m2_join_modal_body_title{
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+        div.m2_join_modal_body_input{
+            text-align: center;
+        }
+        select.m2_join_modal_body_input_select{
+            width:100%;
+            height:56px;
+            border-radius: 10px 10px 0 0;
+            border-bottom: none;
+            border: 1px solid #ccc;
+            padding:10px;
+        }
+        div.m2_join_modal_body_input > input[type=text]{
+            width: 528px;
+            height:56px;
+            box-sizing: border-box;
+            border-radius: 0 0 10px 10px;
+            border: 1px solid #ccc;
+            padding:10px;
+        }
+        div.m2_join_modal_body_word{
+            font-size: 12px;
+            padding:5px;
+        }
+        div.m2_join_modal_body_word > a{
+            color:black;
+            font-weight: bold;
+        }
+        div.m2_join_modal_body_word > a:active{
+            color:gray;
+        }
+        div.m2_join_modal_body_continue {
+            text-align: center;
+        }
+        div.m2_join_modal_body_continue > input[type=submit] {
+            width:100%;
+            height:48px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            background: rgb(220, 20, 100);
+            font-size: 15px;
+            color:white;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        div.m2_join_modal_body_or {
+            display: flex;
+            flex-basis: 100%;
+            align-items: center;
+            color: rgba(0, 0, 0, 0.35);
+            font-size: 12px;
+            margin: 8px 0px;
+            color:black;
+        }
+        div.m2_join_modal_body_or::before,
+        div.m2_join_modal_body_or::after {
+            content: "";
+            flex-grow: 1;
+            background: rgba(0, 0, 0, 0.35);
+            height: 1px;
+            font-size: 0px;
+            line-height: 0px;
+            
+        }
+        button.m2_join_btn{
+            display: flex;
+            width:100%;
+            height:48px;
+            padding: 5px 23px;
+            margin: 20px 0;
+            justify-content: space-between;
+            background: white;
+            border-radius: 10px;
+            border:1px solid black;
+            line-height: 48px;
+        }
+        button.m2_join_btn:hover{
+            background: #fff0f5;
+            cursor: pointer;
+        }
+        button.m2_join_btn:active{
+            
+        }
+        button.m2_join_btn img{
+            width:30px;
+            height:30px;
+            padding-top:2px;
+        }
+        button.m2_join_btn div.m2_join_btn_word{
+            width:100%;
+            text-align: center;
+            line-height: 36px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div style="background:black; height: 800px;">
+    <form action="#" method="post">
+        <div class="m2_join_modal">
+            <div class="m2_join_modal_header">
+                <div class="m2_join_modal_close">
+                    <button class="m2_join_modal_close">X</button>
+                </div>
+                <div class="m2_join_modal_title">
+                    로그인 또는 회원 가입
+                </div>
+            </div>
+            <div class="m2_join_modal_body">
+                <div class="m2_join_modal_body_title">
+                    에어비앤비에 오신 것을 환영합니다.
+                </div>
+                <div class="m2_join_modal_body_input">
+                    <select class="m2_join_modal_body_input_select">
+                        <option value="242CG">콩고 (+242)</option>
+                        <option value="243CD">콩고 민주 공화국 (+243)</option>
+                        <option value="852HK">홍콩 (+852)</option>
+                        <option value="383XK">코소보 (+383)</option>
+                        <option value="853MO">마카오 (+853)</option>
+                        <option value="389MK">북마케도니아 (+389)</option>
+                        <option value="886TW">대만 (+886)</option>
+                        <option value="233GH">가나 (+233)</option>
+                        <option value="241GA">가봉 (+241)</option>
+                        <option value="592GY">가이아나 (+592)</option>
+                        <option value="220GM">감비아 (+220)</option>
+                        <option value="44GG">건지 (+44)</option>
+                        <option value="590GP">과들루프 (+590)</option>
+                        <option value="502GT">과테말라 (+502)</option>
+                        <option value="1GU">괌 (+1)</option>
+                        <option value="1GD">그레나다 (+1)</option>
+                        <option value="30GR">그리스 (+30)</option>
+                        <option value="299GL">그린란드 (+299)</option>
+                        <option value="224GN">기니 (+224)</option>
+                        <option value="245GW">기니비사우 (+245)</option>
+                        <option value="264NA">나미비아 (+264)</option>
+                        <option value="674NR">나우루 (+674)</option>
+                        <option value="234NG">나이지리아 (+234)</option>
+                        <option value="211SS">남수단 (+211)</option>
+                        <option value="27ZA">남아프리카 (+27)</option>
+                        <option value="31NL">네덜란드 (+31)</option>
+                        <option value="599BQ">네덜란드령 카리브 (+599)</option>
+                        <option value="977NP">네팔 (+977)</option>
+                        <option value="47NO">노르웨이 (+47)</option>
+                        <option value="672NF">노퍽섬 (+672)</option>
+                        <option value="64NZ">뉴질랜드 (+64)</option>
+                        <option value="687NC">뉴칼레도니아 (+687)</option>
+                        <option value="683NU">니우에 (+683)</option>
+                        <option value="227NE">니제르 (+227)</option>
+                        <option value="505NI">니카라과 (+505)</option>
+                        <option value="45DK">덴마크 (+45)</option>
+                        <option value="1DM">도미니카 (+1)</option>
+                        <option value="1DO">도미니카 공화국 (+1)</option>
+                        <option value="1US" selected>미국 (+1)</option>
+                    </select>
+                    <input type="text" placeholder="전화번호">
+                </div>
+                <div class="m2_join_modal_body_word">
+                    <p>전화나 문자로 전화번호를 확인하겠습니다. 일반 문자 메세지 요금 및 데이터 요금이 부과됩니다.</p>
+                    <a href="#">개인정보 처리방침</a>
+                </div>
+                <div class="m2_join_modal_body_continue">
+                    <input type="submit" value="계속">
+                </div>
+                <div class="m2_join_modal_body_or">
+                    &nbsp;&nbsp;&nbsp;또는&nbsp;&nbsp;&nbsp;
+                </div>
+                <div style="text-align:center">
+                    <div class="m2_join_modal_body_facebook">
+                        <button type="button" class="m2_join_btn">
+                            <div>
+                                <img src="./images/facebook.JPG">
+                            </div>
+                            <div class="m2_join_btn_word">
+                                페이스북으로 로그인하기
+                            </div>
+                        </button>
+                    </div>
+                    <div class="m2_join_modal_body_google">
+                        <button class="m2_join_btn">
+                            <div>
+                                <img src="./images/google.JPG">
+                            </div>
+                            <div class="m2_join_btn_word">
+                                구글로 로그인하기
+                            </div>
+                        </button>
+                    </div>
+                    <div class="m2_join_modal_body_apple">
+                        <button class="m2_join_btn">
+                            <div>
+                                <img src="./images/apple.JPG">
+                            </div>
+                            <div class="m2_join_btn_word">
+                                Apple 계정으로 계속하기
+                            </div>
+                        </button>
+                    </div>
+                    <div class="m2_join_modal_body_email">
+                        <button class="m2_join_btn">
+                            <div>
+                                <img src="./images/email.JPG">
+                            </div>
+                            <div class="m2_join_btn_word">
+                                이메일로 로그인하기
+                            </div>
+                        </button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+    </form>
+    </div>
+</body>
+</html>

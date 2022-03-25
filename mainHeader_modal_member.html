@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Document</title>
+    <style>
+
+        div#check_modal{
+            height:900px;
+        }
+        div.m2_modal_member{
+            width:395px;
+            height:375px;
+            padding:16px 32px;
+            box-sizing: border-box;
+            border-radius: 25px;
+        }
+        div.m2_modal_member{
+            background: white;
+           
+        }
+        div.m2_modal_member_content{
+            display: flex;
+            height:70px;
+            margin:0 auto;
+            padding:16px 16px;
+            box-sizing: border-box;
+        }
+        div.m2_modal_member_content:not(:last-child,:nth-child(4)){
+            border-bottom: 1px solid gray;
+            box-sizing: border-box;
+        }
+        div.m2_modal_member_content_title > div:first-child{
+            font-weight: bold;
+            font-size: 14px;
+        }
+        div.m2_modal_member_content_title > div:last-child{
+            color:gray;
+            font-size: 14px;
+        }
+        div.m2_modal_member_content_title{
+            width:320px;
+            margin:0;
+        }
+        div.m2_modal_member_content_plus{
+            display: flex;
+            width:75px;
+            margin:0 auto;
+            justify-content: center;
+        }
+        div.m2_member_btn{
+            line-height: 25px;
+        }
+        div.m2_change_number{
+            margin:0 20px;
+            line-height: 30px;
+        }
+        #m2_animal_modal_btn {
+            appearance: none; 
+            background: transparent; 
+            border:none;
+            text-decoration: underline;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #m2_animal_modal_btn:active {
+            color:gray;
+        }
+        div.m2_animal_modal{
+            width:100%;
+            height:100%;
+            display:none;
+        }
+    </style>
+    <script>
+        // window.onload = function(){
+        //     $(".btn2").click(plus1(1));
+        //     $(".btn1").click(plus1(-1));
+        // }
+        var changNumber1 = 0;
+        var changNumber2 = 0;
+        var changNumber3 = 0;
+        var changNumber4 = 0;
+
+        function plus1(n){
+            plusNumber1(changNumber1 += n);
+        }
+        function plusNumber1(n){
+            $("#m2_number1").text(changNumber1);
+            if(changNumber1>=1){
+                $("#m2_member_btn1_1").removeAttr("disabled");
+            } else {
+                $("#m2_member_btn1_1").attr("disabled","disabled");
+            }
+        }
+        function plus2(n){
+            plusNumber2(changNumber2 += n);
+        }
+        function plusNumber2(n){
+            $("#m2_number2").text(changNumber2);
+            if(changNumber2>=1){
+                $("#m2_member_btn2_1").removeAttr("disabled");
+            } else {
+                $("#m2_member_btn2_1").attr("disabled","disabled");
+            }
+        }
+        function plus3(n){
+            plusNumber3(changNumber3 += n);
+        }
+        function plusNumber3(n){
+            $("#m2_number3").text(changNumber3);
+            if(changNumber3>=1){
+                $("#m2_member_btn3_1").removeAttr("disabled");
+            } else {
+                $("#m2_member_btn3_1").attr("disabled","disabled");
+            }
+        }
+        function plus4(n){
+            plusNumber4(changNumber4 += n);
+        }
+        function plusNumber4(n){
+            $("#m2_number4").text(changNumber4);
+            if(changNumber4>=1){
+                $("#m2_member_btn4_1").removeAttr("disabled");
+            } else {
+                $("#m2_member_btn4_1").attr("disabled","disabled");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="m2_animal_modal">
+
+    </div>
+    <div id="check_modal" style="background:black;">
+        <div class="m2_modal_member">
+            <div class="m2_modal_member_content">
+                <div class="m2_modal_member_content_title">
+                    <div>성인</div>
+                    <div>만 13세 이상</div>
+                </div>
+                <div class="m2_modal_member_content_plus">
+                    <div class="m2_member_btn"><button id="m2_member_btn1_1" disabled="true;" class="w3-circle btn1" onclick="plus1(-1)"><div style="width:13px">-</div></button></div> 
+                    <div class="m2_change_number" id="m2_number1">0</div>
+                    <div class="m2_member_btn" id="m2_btn1_2"><button type="button" class="w3-circle btn2" onclick="plus1(1)"><div style="width:13px">+</div></button></div> 
+                </div>
+            </div>
+
+            <div class="m2_modal_member_content">
+                <div class="m2_modal_member_content_title">
+                    <div>어린이</div>
+                    <div>만 2~12세</div>
+                </div>
+                <div class="m2_modal_member_content_plus">
+                    <div class="m2_member_btn"><button id="m2_member_btn2_1" disabled="true;" class="w3-circle btn1" onclick="plus2(-1)"><div style="width:13px">-</div></button></div> 
+                    <div class="m2_change_number" id="m2_number2">0</div>
+                    <div class="m2_member_btn" id="m2_btn2_2"><button type="button" class="w3-circle btn2" onclick="plus2(1)"><div style="width:13px">+</div></button></div> 
+                </div>
+            </div>
+
+            <div class="m2_modal_member_content">
+                <div class="m2_modal_member_content_title">
+                    <div>유아</div>
+                    <div>만 2세 미만</div>
+                </div>
+                <div class="m2_modal_member_content_plus">
+                    <div class="m2_member_btn"><button id="m2_member_btn3_1" disabled="true;" class="w3-circle btn1" onclick="plus3(-1)"><div style="width:13px">-</div></button></div> 
+                    <div class="m2_change_number" id="m2_number3">0</div>
+                    <div class="m2_member_btn" id="m2_btn3_2"><button type="button" class="w3-circle btn2" onclick="plus3(1)"><div style="width:13px">+</div></button></div> 
+                </div>
+            </div>
+        
+            <div class="m2_modal_member_content">
+                <div class="m2_modal_member_content_title">
+                    <div>반려동물</div>
+                    <button type="button" id="m2_animal_modal_btn" >보조동물을 동반하시나요?</button>
+                </div>
+                <div class="m2_modal_member_content_plus">
+                    <div class="m2_member_btn"><button id="m2_member_btn4_1" disabled="true;" class="w3-circle btn1" onclick="plus4(-1)"><div style="width:13px">-</div></button></div> 
+                    <div class="m2_change_number" id="m2_number4">0</div>
+                    <div class="m2_member_btn" id="m2_btn4_2"><button type="button" class="w3-circle btn2" onclick="plus4(1)"><div style="width:13px">+</div></button></div> 
+                </div>
+            </div>
+
+            <div class="m2_modal_member_content">
+                <div style="font-size:14px; color:gray;">
+                    반려동물을 3마리 이상 동반하는 경우, 반드시 호스트에게 알려주세요.
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
+
+
+
+
