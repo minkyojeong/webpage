@@ -1,0 +1,275 @@
+#m2_id_wrap {
+    width: 80%;
+    margin: 0 auto;
+}
+.m2_class_BtnEvent, .m2_class_BtnEvent:visited, .m2_class_BtnEvent:hover, .m2_class_BtnEvent:focus, .m2_class_BtnEvent:active {
+    text-decoration: none;
+}
+#m2_id_sec1ConBtn:hover, #m2_id_sec3Con1Btn:hover, #m2_id_sec3Con2Btn:hover, #m2_id_sec4ConBtn:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+    
+/* sec1 */
+#m2_id_sec1Con {
+    background-image: url(../images/m2_Section1.png);
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+}
+#m2_id_sec1ConText {
+    color: white;
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 54px;
+    position: absolute;
+    top: 480px
+}
+#m2_id_sec1ConBtn {
+    position: absolute;
+    top: 575px;
+    background: white;
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1000px;
+}
+#m2_id_sec1ConBtnText {
+    background: linear-gradient(#6F019C, #C6017E);
+    color: transparent;
+    -webkit-background-clip: text;
+    font-weight: 800;
+}
+
+/* sec2 */
+#m2_id_sec2 {
+    padding-top: 90px;
+}
+#m2_id_sec2Title {
+    margin-bottom: 50px;
+}
+#m2_id_sec2TitleText {
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 47px;
+}
+#m2_id_sec2Con{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    place-items: center;
+    justify-content: center;
+}
+
+#m2_id_sec2Con1, #m2_id_sec2Con2, #m2_id_sec2Con3, #m2_id_sec2Con4 {
+    margin: 10px 10px;
+}
+#m2_id_sec2Con1Upper {
+    background-image: url(../images/m2_Section2_seoul.png);
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    width: 380px;
+    border-radius: 12px 12px 0 0;
+}
+#m2_id_sec2Con2Upper {
+    background-image: url(../images/m2_Section2_incheon.png);
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    width: 380px;
+    border-radius: 12px 12px 0 0;
+}
+#m2_id_sec2Con3Upper {
+    background-image: url(../images/m2_Section2_daegu.png);
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    width: 380px;
+    border-radius: 12px 12px 0 0;
+}
+#m2_id_sec2Con4Upper {
+    background-image: url(../images/m2_Section2_daejeon.png);
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    width: 380px;
+    border-radius: 12px 12px 0 0;
+}
+
+#m2_id_sec2Con1Bottom {
+    background-color: #bc1a6f;
+    height: 250px;
+    width: 380px;
+    border-radius: 0 0 12px 12px;
+}
+#m2_id_sec2Con2Bottom {
+    background-color: #cc2d4b;
+    height: 250px;
+    width: 380px;
+    border-radius: 0 0 12px 12px;
+}
+#m2_id_sec2Con3Bottom {
+    background-color: #d93b30;
+    height: 250px;
+    width: 380px;
+    border-radius: 0 0 12px 12px;
+}
+#m2_id_sec2Con4Bottom {
+    background-color: #de3051;
+    height: 250px;
+    width: 380px;
+    border-radius: 0 0 12px 12px;
+}
+#m2_id_sec2Con1BottomText, #m2_id_sec2Con2BottomText, #m2_id_sec2Con3BottomText, #m2_id_sec2Con4BottomText {
+    display: inline-block;
+    margin: 20px 15px;
+}
+#m2_id_sec2Con1BottomText1, #m2_id_sec2Con2BottomText1, #m2_id_sec2Con3BottomText1, #m2_id_sec2Con4BottomText1 {
+    color: white;
+    font-size: 35px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 39px;
+    display: block;
+    margin-bottom: 10px;
+}
+#m2_id_sec2Con1BottomText2, #m2_id_sec2Con2BottomText2, #m2_id_sec2Con3BottomText2, #m2_id_sec2Con4BottomText2 {
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+    display: block;
+}
+
+/* sec3 */
+#m2_id_sec3 {
+    padding-top: 90px;
+}
+#m2_id_sec3Title {
+    margin-bottom: 50px;
+}
+#m2_id_sec3TitleText {
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 47px;
+}
+#m2_id_sec3Con {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    justify-content: center;
+}
+#m2_id_sec3Con1 {
+    background-image: url(../images/m2_Section3_1.png);
+    background-size: cover;
+    background-position: center;
+    margin: 10px 10px;
+    width: 95%; /* 550px */ 
+    height: 700px;
+    border-radius: 12px;
+}
+#m2_id_sec3Con2 {
+    background-image: url(../images/m2_Section3_2.png);
+    background-size: cover;
+    background-position: center;
+    margin: 10px 10px;
+    width: 95%; /* 550px */ 
+    height: 700px;
+    border-radius: 12px;
+}
+#m2_id_sec3Con1Text, #m2_id_sec3Con2Text {
+    margin: 40px;
+}
+#m2_id_sec3Con1Title, #m2_id_sec3Con2Title {
+    color: white;
+    font-size: 53px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 60px;
+    display: block;
+    margin-bottom: 25px;
+}
+#m2_id_sec3Con1Btn {
+    background: white;
+    width: 80px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+#m2_id_sec3Con2Btn {
+    background: white;
+    width: 130px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+#m2_id_sec3Con1BtnText, #m2_id_sec3Con2BtnText {
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+/* sec4 */
+#m2_id_sec4 {
+    padding-top: 90px;
+}
+#m2_id_sec4Con {
+    background-image: url(../images/m2_Section4.png);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 600px;
+    border-radius: 12px
+}
+#m2_id_sec4ConText {
+    margin: 80px;
+    position: absolute;
+    
+}
+#m2_id_sec4ConTitle {
+    color: white;
+    font-size: 95px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 105px;
+    display: block;
+    margin-bottom: 100px;
+}
+#m2_id_sec4ConBtn {
+    background: white;
+    width: 240px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+#m2_id_sec4Con4BtnText {
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+}
+@media (max-width:1000px) {
+    #m2_id_sec2Con {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    #m2_id_sec3Con {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}

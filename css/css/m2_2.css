@@ -1,0 +1,121 @@
+*{margin:0; padding:0;}
+div#m2_mainsection2{
+    width:80%;
+    margin:0 auto;
+}
+div.m2_slides p:first-child{
+    font-size: 42px;
+}
+div#m2_mainsection2 a.m2_house_link{
+    text-decoration: none;
+}
+div#m2_mainsection2 a.m2_house_link:active p{
+    color:blue;
+}
+div.m2_house_list {
+    display: flex;
+    justify-content: center;
+    height:300px;
+}
+div.m2_house_content{
+    text-align: center;
+    margin:0 20px;
+    width:300px;
+}
+div.m2_house_content p:first-of-type{
+    color:black;
+}
+div.m2_house_content img{
+    width:216px;
+    height:216px;
+}
+div.m2_slide_button_list{
+    text-align: center;
+    margin:20px 0;
+}
+a.m2_slide_button {
+    margin:10px;
+}
+a.m2_slide_button:hover {
+    color:red;
+}
+
+/* input.m2_slide_button{
+    color:black;
+    background: white;
+    border-radius: 15px;
+    font-size: 20px;
+    padding:10px;
+    margin:0 50px;
+}
+input.m2_slide_button:hover{
+    color:white;
+    background: black;
+} */
+
+input[type=radio]{
+    display:none;
+}
+div.m2_buttons {
+    width:900px;
+    margin:20px auto;
+}
+div.m2_buttons div.m2_buttons_label {
+    overflow: hidden;
+    text-align: center;
+    width:900px;
+}
+div.m2_buttons label.m2_event_btn {
+    display:block;
+    border:1px solid black;
+    width:450px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 20px;
+    float:left;
+    box-sizing: border-box;
+}
+input[type=radio]:nth-of-type(1):checked ~ .m2_buttons label:nth-of-type(1),
+input[type=radio]:nth-of-type(2):checked ~ .m2_buttons label:nth-of-type(2){
+    background: black;
+    color:white;
+}
+div.m2_event_list{
+    width:80%;
+    height:400px;
+    margin:0 auto;
+    text-align: center;
+}
+div.m2_event_list p:first-of-type{
+    color:black;
+}
+div.m2_event_past_content{
+    width:20%;
+    height:400px;
+    text-align: center;
+    display: none;
+    float:left;
+    margin:0 10px;
+}
+div.m2_event_ing_content{
+    width:20%;
+    height:400px;
+    text-align: center;
+    float:left;
+    margin:0 10px;
+}
+div.m2_event_past_content img{
+    width:216px;
+    height:216px;
+}
+div.m2_event_ing_content img{
+    width:216px;
+    height:216px;
+}
+div.m2_event_list a.m2_event_content_link{
+    text-decoration: none;
+}
+div.m2_event_list a.m2_event_content_link:active p{
+    color:blue;
+}
